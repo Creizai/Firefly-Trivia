@@ -5,46 +5,66 @@ const url = "https://trivia.propernerd.com/api/questions?limit=10&random=true&ca
 const form = document.querySelector("form");
 
 // targetting the form input to get the value to compare to API answer
-let formInput = form.querySelector("input.guess");
+let formInput = form.querySelector("#guess");
 
 // targetting the elements I want to update
-let questionBox = document.querySelector("#question");
+const questionBox = document.querySelector("#question");
 
 // targeting the result
-let answerResult = document.querySelector("#answerResult");
+const answerResult = document.querySelector("#answerResult");
 
 // Targetting the Answer
-let theAnswer = document.querySelector("#theAnswer");
+const theAnswer = document.querySelector("#theAnswer");
 
-let correct = "Correct!";
-let incorrect = "Incorrect!";
+const correct = "Correct!";
+const incorrect = "Incorrect!";
 
 let fireflyArr = [];
+
+
 
 fetch(url)
     .then(res => res.json())
     .then(res => {
 
-        let value = formInput;
+
         let fireflyArr = res;
         let questionNum = 0;
 
-
-        questionBox.innerText = fireflyArr[questionNum].question;
-
         console.log(fireflyArr[questionNum]);
         console.log(fireflyArr[questionNum].question)
+        console.log(fireflyArr[questionNum].answer)
         questionBox.innerText = fireflyArr[questionNum].question;
 
-        button.addEventListener("click", evt => {
+        form.addEventListener("submit", evt => {
             evt.preventDefault();
-            if (value === fireflyArr[questionNum].answer) {
+
+            let value = formInput.value;
+            console.log(value);
+
+            if (value == fireflyArr[questionNum].answer) {
                 answerResult.innerText = correct;
                 theAnswer.innerText = "Great Job!";
+                questionNum++;
+                console.log(fireflyArr[questionNum]);
+                console.log(fireflyArr[questionNum].question)
+                console.log(fireflyArr[questionNum].answer)
+                questionBox.innerText = fireflyArr[questionNum].question;
+                formInput.value = null;
+                console.log(value)
+
             } else {
                 answerResult.innerText = incorrect;
+                theAnswer.innerText = fireflyArr[questionNum].answer;
+                questionNum++;
+                // update dom for new question
+                console.log(fireflyArr[questionNum]);
+                console.log(fireflyArr[questionNum].question)
+                console.log(fireflyArr[questionNum].answer)
+                questionBox.innerText = fireflyArr[questionNum].question;
+                //clean the input form
+                formInput.value = null;
+                console.log(value)
             }
-
         });
-
     });
