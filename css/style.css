@@ -14,6 +14,7 @@ Question and mass text font: font-family: 'Sulphur Point', sans-serif;
 }
 
 body {
+	box-sizing: border-box;
 	background-color: var(--brown-color);
 }
 
@@ -35,6 +36,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    align-items: flex-end;
+    align-content: flex-end;
 }
 
 #trivia-title {
@@ -66,21 +69,11 @@ h2 {
 
 h3 {
 	text-align: center;
-    letter-spacing: 0.1em;
     font-size: 24px;
     font-family: 'Russo One', sans-serif;
     background-color: var(--blue-color);
     color: var(--brown-color);
 }
-
-h5 {
-	text-align: center;
-    color: var(---brown-color);
-    font-family: 'Russo One', sans-serif;
-    font-weight: 800px;
-}
-
-
 
 /*input box*/
 input[type=text] {
@@ -99,22 +92,9 @@ input[type=text] {
 /* submit button*/
 /* hidden now! */
 input[type=submit] {
-    display: none;/*
-    background-color: var(--blue-color);
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    border: none;
-    color: var(--brown-color);
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;*/
-}
+    display: none;
 
-/*.border-box {
-    border: 10px solid var(--blue-color);
-    max-width: 640px;
-}*/
+}
 
 #answer-box {
     display: flex;
@@ -122,19 +102,23 @@ input[type=submit] {
     justify-content: space-between;
 }
 
-.result-box {
+/*
+for the flip
+#result-box {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     background-color: var(--brown-color);
 }
-
+*/
 #game-box {
+	display: flex;
     position: relative;
-    /*max-width: 640px;*/
-    height: auto;
+    height: 150px;
     /*border: 10px solid var(--brown-color);*/
     background-color: var(--blue-color);
     padding: 10px;
     box-sizing: : border-box;
+    align-items: center;
+    justify-content: center;
 }

@@ -29,7 +29,7 @@ let scoreCount = 0;
 fetch(url)
     .then(res => res.json())
     .then(res => {
-    	
+
         let fireflyArr = res;
         let questionNum = 0;
 
@@ -62,7 +62,7 @@ fetch(url)
 
             } else if (value != fireflyArr[questionNum].answer  && questionNum < (fireflyArr.length - 1)){
                 answerResult.innerText = incorrect;
-                theAnswer.innerText = fireflyArr[questionNum].answer;
+                theAnswer.innerText = `The Correct Answer Was : ${fireflyArr[questionNum].answer}`;
                 questionNum++;
                 // update dom for new question
                 console.log(fireflyArr[questionNum]);
