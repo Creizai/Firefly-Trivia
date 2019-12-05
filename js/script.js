@@ -20,6 +20,7 @@ const correct = "Correct!";
 const incorrect = "Incorrect!";
 
 let fireflyArr = [];
+let score = 0;
 
 
 
@@ -41,8 +42,9 @@ fetch(url)
 
             let value = formInput.value;
             console.log(value);
+            console.log(`Question Number ${questionNum}`)
 
-            if (value == fireflyArr[questionNum].answer  && questionNum < fireflyArr.length) {
+            if (value == fireflyArr[questionNum].answer  && questionNum < (fireflyArr.length - 1)) {
                 answerResult.innerText = correct;
                 theAnswer.innerText = "Great Job!";
                 questionNum++;
@@ -52,8 +54,9 @@ fetch(url)
                 questionBox.innerText = fireflyArr[questionNum].question;
                 formInput.value = null;
                 console.log(value)
+                score++;
 
-            } else if (value != fireflyArr[questionNum].answer  && questionNum < fireflyArr.length){
+            } else if (value != fireflyArr[questionNum].answer  && questionNum < (fireflyArr.length - 1)){
                 answerResult.innerText = incorrect;
                 theAnswer.innerText = fireflyArr[questionNum].answer;
                 questionNum++;
@@ -67,7 +70,7 @@ fetch(url)
                 console.log(value)
             }
             else {
-            	
+
             }
         });
     });

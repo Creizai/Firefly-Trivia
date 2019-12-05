@@ -14,6 +14,10 @@ Question and mass text font: font-family: 'Sulphur Point', sans-serif;
 }
 
 body {
+	background-color: var(--brown-color);
+}
+
+#boss-box {
     padding: 0;
     background-color: var(--brown-color);
     color: var(--blue-color);
@@ -26,30 +30,31 @@ body {
 }
 
 header {
-	margin-top: 5%;
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
 }
 
 h1 {
     text-align: center;
     font-size: 64px;
-    letter-spacing: 0.2em;
     font-weight: 200;
     font-family: 'Righteous', cursive;
     background-color: var(--tan-color);
     color: var(--brown-color);
-    border-top: 3px solid var(--blue-color);
-    border-left: 3px solid var(--blue-color);
-    border-right: 3px solid var(--blue-color);
-
     max-width: 600px;
-    padding: 0;
+    padding: 0 0.1em;
     margin: 0;
 }
 
 h2 {
+	text-align: center;
     font-family: 'Share', cursive;
     background-color: var(--blue-color);
     color: var(--brown-color);
@@ -58,33 +63,77 @@ h2 {
 }
 
 h3 {
-    font-size: 32px;
-    font-family: 'Sulphur Point', sans-serif;
+	text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 24px;
+    font-family: 'Russo One', sans-serif;
     background-color: var(--blue-color);
     color: var(--brown-color);
 }
 
-.border-box {
-    border: 2px solid var(--blue-color);
-    max-width: 640px;
+h5 {
+	text-align: center;
+    color: var(---brown-color);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 800px;
 }
 
-footer {
-	display: flex;
-	flex-direction: column;
+/*Guess input box*/
+.guess {}
+
+.submit {}
+
+/*input box*/
+input[type=text] {
+    background-color: var(--blue-color);
+    color: var(--brown-color);
+    border: none;
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    padding: 0 auto;
+    text-decoration: none;
+    margin: 10px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* submit button*/
+/* hidden now! */
+input[type=submit] {
+    display: none;
+    background-color: var(--blue-color);
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    border: none;
+    color: var(--brown-color);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/*.border-box {
+    border: 10px solid var(--blue-color);
+    max-width: 640px;
+}*/
+
+.answer-box {
+    justify-content: space-
 }
 
 .result-box {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    background-color: var(--brown-color);
 }
 
 #game-box {
     position: relative;
     /*max-width: 640px;*/
     height: auto;
-    border: 2px solid var(--blue-color);
-    padding: 30px;
+    /*border: 10px solid var(--brown-color);*/
+    background-color: var(--blue-color);
+    padding: 10px;
     box-sizing: : border-box;
 }

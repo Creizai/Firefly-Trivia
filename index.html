@@ -4,31 +4,44 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Firefly Trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Russo+One|Share|Sulphur+Point&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Firefly Trivia Game</h1>
-    </header>
-    <main>
-        <div id="game-box">
-            <div id="question-box">
-                <h3 id="question">Question Goes Here</h3>
+    <div id="boss-box">
+        <header>
+            <h1>FIREFLY</h1>
+        </header>
+        <main>
+            <div id="game-box">
+                <div id="question-box">
+                    <h3 id="question">Question Goes Here</h3>
+                </div>
+<!-- 
+                <div id="result-box">
+                    <h3 id="question">Question Goes Here</h3>
+                </div>
+                 -->
             </div>
-            <div id="">
+            <div id="answer-box">
                 <form>
-                    <input type="text" id="guess" value="Guess Here">
-                    <input type="submit" value="Submit">
+                    <input type="text" id="guess" placeholder="Guess Here">
+                    <input type="submit" id="submit" value="Submit">
                 </form>
+                <h5 id="answerResult">Correct!</h5>
+                <h5 id="theAnswer">The Correct Answer Was : </h5>
             </div>
-        </div>
-    </main>
-    <footer>
-    	<div ><h3 id="answerResult">Result...</h3>
-    		<h3 id="theAnswer">The Correct Answer Was : </h3></div>
-    </footer>
-    <script type="text/javascript" src="js/script.js"></script>
+<!--             <div id="result-box">
+                <h5 id="answerResult">Correct!</h5>
+                <h5 id="theAnswer">The Correct Answer Was : </h5>
+            </div> -->
+        </main>
+        <footer>
+            <h1>Trivia</h1>
+        </footer>
+        <script type="text/javascript" src="js/script.js"></script>
+    </div>
 </body>
 
 </html>
