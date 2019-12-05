@@ -42,7 +42,7 @@ fetch(url)
             let value = formInput.value;
             console.log(value);
 
-            if (value == fireflyArr[questionNum].answer) {
+            if (value == fireflyArr[questionNum].answer  && questionNum < fireflyArr.length) {
                 answerResult.innerText = correct;
                 theAnswer.innerText = "Great Job!";
                 questionNum++;
@@ -53,7 +53,7 @@ fetch(url)
                 formInput.value = null;
                 console.log(value)
 
-            } else {
+            } else if (value != fireflyArr[questionNum].answer  && questionNum < fireflyArr.length){
                 answerResult.innerText = incorrect;
                 theAnswer.innerText = fireflyArr[questionNum].answer;
                 questionNum++;
@@ -65,6 +65,9 @@ fetch(url)
                 //clean the input form
                 formInput.value = null;
                 console.log(value)
+            }
+            else {
+            	
             }
         });
     });
