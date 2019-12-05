@@ -1,0 +1,90 @@
+/*
+
+Title Font: font-family: 'Righteous', cursive;
+Other nonTitle Font: font-family: 'Share', cursive;
+Question and mass text font: font-family: 'Sulphur Point', sans-serif;
+
+*/
+
+
+:root {
+    --brown-color: rgb(66, 51, 45);
+    --blue-color: rgb(181, 227, 243);
+    --tan-color: rgb(244, 169, 135);
+}
+
+body {
+    padding: 0;
+    background-color: var(--brown-color);
+    color: var(--blue-color);
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+	margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    font-size: 64px;
+    letter-spacing: 0.2em;
+    font-weight: 200;
+    font-family: 'Righteous', cursive;
+    background-color: var(--tan-color);
+    color: var(--brown-color);
+    border-top: 3px solid var(--blue-color);
+    border-left: 3px solid var(--blue-color);
+    border-right: 3px solid var(--blue-color);
+
+    max-width: 600px;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Share', cursive;
+    background-color: var(--blue-color);
+    color: var(--brown-color);
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    font-size: 32px;
+    font-family: 'Sulphur Point', sans-serif;
+    background-color: var(--blue-color);
+    color: var(--brown-color);
+}
+
+.border-box {
+    border: 2px solid var(--blue-color);
+    max-width: 640px;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#game-box {
+    position: relative;
+    /*max-width: 640px;*/
+    height: auto;
+    border: 2px solid var(--blue-color);
+    padding: 30px;
+    box-sizing: : border-box;
+}
