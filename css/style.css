@@ -35,10 +35,9 @@ header {
     flex-direction: row;
 }
 
-footer {
+#trivia-title {
     display: flex;
-    flex-direction: row;
-    align-self: flex-end;
+    justify-content: flex-end;
 }
 
 h1 {
@@ -117,8 +116,10 @@ input[type=submit] {
     max-width: 640px;
 }*/
 
-.answer-box {
-    justify-content: space-
+#answer-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .result-box {
