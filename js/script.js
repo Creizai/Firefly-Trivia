@@ -19,16 +19,17 @@ const theAnswer = document.querySelector("#theAnswer");
 const correct = "Correct!";
 const incorrect = "Incorrect!";
 
+const score = document.querySelector("#score");
+
 let fireflyArr = [];
-let score = 0;
+let scoreCount = 0;
 
 
 
 fetch(url)
     .then(res => res.json())
     .then(res => {
-
-
+    	
         let fireflyArr = res;
         let questionNum = 0;
 
@@ -54,7 +55,10 @@ fetch(url)
                 questionBox.innerText = fireflyArr[questionNum].question;
                 formInput.value = null;
                 console.log(value)
-                score++;
+                scoreCount++;
+                score.innerText = `Score: ${scoreCount}`;
+
+
 
             } else if (value != fireflyArr[questionNum].answer  && questionNum < (fireflyArr.length - 1)){
                 answerResult.innerText = incorrect;
