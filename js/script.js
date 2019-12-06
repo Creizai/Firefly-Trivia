@@ -80,6 +80,10 @@ function flipQuestion() {
     flip.style.transform = `rotateY(180deg)`;
 }
 
+function flipBack() {
+    flip.style.transform = `rotateY(0deg)`;
+
+}
 
 /*
 fetch(url)
@@ -165,7 +169,10 @@ form.addEventListener("submit", evt => {
         console.log(value)
         scoreCount++;
         score.innerText = `Score: ${scoreCount}`;
-        flipQuestion();
+        setTimeout(function() {
+            flipBack();
+        }, 3000)
+
 
 
     } else if (value != fireflyArr[questionNum].answer && questionNum < (fireflyArr.length - 1)) {
