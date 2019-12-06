@@ -42,6 +42,9 @@ const game = [{
 
 ];
 
+// delay single 
+// setTimeout(function() {}, 3000)
+
 // Returns the API and stores it in an Array of Objects
 const url = "https://trivia.propernerd.com/api/questions?limit=10&random=true&category=firefly";
 
@@ -60,12 +63,22 @@ const answerResult = document.querySelector("#answerResult");
 // Targetting the Answer
 const theAnswer = document.querySelector("#theAnswer");
 
+// Targeting the flip css element 
+// .flip-card:hover .flip-card-inner {
+//   transform: rotateY(180deg);
+// }
+const flip = document.querySelector(".flip-card-inner")
+
 const correct = "Correct!";
 const incorrect = "Incorrect!";
 
 const score = document.querySelector("#score");
 
 let scoreCount = 0;
+
+function flipQuestion() {
+    flip.style.transform = `rotateY(180deg)`;
+}
 
 
 /*
@@ -143,6 +156,7 @@ form.addEventListener("submit", evt => {
         answerResult.innerText = correct;
         theAnswer.innerText = "Great Job!";
         questionNum++;
+        flipQuestion();
         console.log(fireflyArr[questionNum]);
         console.log(fireflyArr[questionNum].question)
         console.log(fireflyArr[questionNum].answer)
@@ -151,7 +165,7 @@ form.addEventListener("submit", evt => {
         console.log(value)
         scoreCount++;
         score.innerText = `Score: ${scoreCount}`;
-
+        flipQuestion();
 
 
     } else if (value != fireflyArr[questionNum].answer && questionNum < (fireflyArr.length - 1)) {
@@ -159,6 +173,7 @@ form.addEventListener("submit", evt => {
         theAnswer.innerText = `The Correct Answer Was : ${fireflyArr[questionNum].answer}`;
         questionNum++;
         // update dom for new question
+        flipQuestion();
         console.log(fireflyArr[questionNum]);
         console.log(fireflyArr[questionNum].question)
         console.log(fireflyArr[questionNum].answer)
@@ -166,6 +181,7 @@ form.addEventListener("submit", evt => {
         //clean the input form
         formInput.value = null;
         console.log(value)
+
     } else {
 
     }

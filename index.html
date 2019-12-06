@@ -12,31 +12,32 @@
     <div id="boss-box">
         <header>
             <h1>FIREFLY</h1>
-            <h3 id="answerResult"></h3>
+            <!-- <h3 id="answerResult"></h3> -->
             <h3 id="score">Score: 0</h3>
         </header>
-        <main>
-            <div id="game-box">
-                <div id="question-box">
-                    <h3 id="question">Question Goes Here</h3>
+
+<main>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 id="question">Question<h3>
                 </div>
-                <!-- 
-                <div id="result-box">
-                    <h3 id="question">Question Goes Here</h3>
+                <div class="flip-card-back">
+                    <h3 id="answerResult" >I'm a developer</h3>
+                    <h3 id="theAnswer">I'm a developer</h3>
                 </div>
-                 -->
             </div>
-            <div id="trivia-title">
-                
-                    <form>
-                        <input type="text" id="guess" placeholder="Guess Here">
-                        <input type="submit" id="submit" value="Submit">
-                    </form>
-                
-                <h1>Trivia</h1>
-            </div>
-            <h3 id="theAnswer"></h3>
-        </main>
+        </div>
+</main>
+
+        <div id="trivia-title">
+            <form>
+                <input type="text" id="guess" placeholder="Guess Here">
+                <input type="submit" id="submit" value="Submit">
+            </form>
+            <h1>Trivia</h1>
+        </div>
+        <!-- <h3 id="theAnswer"></h3> -->
         <script type="text/javascript" src="js/script.js"></script>
     </div>
 </body>
