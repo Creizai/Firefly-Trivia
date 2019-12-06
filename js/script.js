@@ -1,3 +1,47 @@
+const game = [{
+        question: "What's the name of the ship",
+        answer: "serenity",
+        difficulty: 0
+    }, {
+        question: "What's the shorthand name of the captain of the serinity",
+        answer: "mal",
+        difficulty: 0
+    }, {
+        question: "What's the first name of the first mate of the serinity",
+        answer: "zoe",
+        difficulty: 0
+    }, {
+        question: "What's the nickname of the pilot of the sernity",
+        answer: "wash",
+        difficulty: 0
+    }, {
+        question: "What's the first name of companion who leases a shuttle from mal",
+        answer: "inara",
+        difficulty: 0
+    }, {
+        question: "What's the first name of the hired gun on the sernity",
+        answer: "jayne",
+        difficulty: 0
+    }, {
+        question: "What's the name of the valley the majority of the first episode takes place in",
+        answer: "serenity",
+        difficulty: 0
+    }, {
+        question: "What's the nickname, easily confused as her real name, of the serinity's enginer mechanic",
+        answer: "kaylee",
+        difficulty: 0
+    }, {
+        question: "What's the last name of the Shepard onboard of the serinity",
+        answer: "book",
+        difficulty: 0
+    }, {
+        question: "What's the first name of the mentally unstable psychic weapon on board",
+        answer: "river",
+        difficulty: 0
+    }
+
+];
+
 // Returns the API and stores it in an Array of Objects
 const url = "https://trivia.propernerd.com/api/questions?limit=10&random=true&category=firefly";
 
@@ -21,11 +65,10 @@ const incorrect = "Incorrect!";
 
 const score = document.querySelector("#score");
 
-let fireflyArr = [];
 let scoreCount = 0;
 
 
-
+/*
 fetch(url)
     .then(res => res.json())
     .then(res => {
@@ -78,3 +121,52 @@ fetch(url)
             }
         });
     });
+    */
+
+let fireflyArr = game;
+let questionNum = 0;
+
+console.log(fireflyArr[questionNum]);
+console.log(fireflyArr[questionNum].question)
+console.log(fireflyArr[questionNum].answer)
+questionBox.innerText = fireflyArr[questionNum].question;
+
+form.addEventListener("submit", evt => {
+    evt.preventDefault();
+
+    let value = formInput.value;
+    value = value.toLowerCase()
+    console.log(value);
+    console.log(`Question Number ${questionNum}`)
+
+    if (value == fireflyArr[questionNum].answer && questionNum < (fireflyArr.length - 1)) {
+        answerResult.innerText = correct;
+        theAnswer.innerText = "Great Job!";
+        questionNum++;
+        console.log(fireflyArr[questionNum]);
+        console.log(fireflyArr[questionNum].question)
+        console.log(fireflyArr[questionNum].answer)
+        questionBox.innerText = fireflyArr[questionNum].question;
+        formInput.value = null;
+        console.log(value)
+        scoreCount++;
+        score.innerText = `Score: ${scoreCount}`;
+
+
+
+    } else if (value != fireflyArr[questionNum].answer && questionNum < (fireflyArr.length - 1)) {
+        answerResult.innerText = incorrect;
+        theAnswer.innerText = `The Correct Answer Was : ${fireflyArr[questionNum].answer}`;
+        questionNum++;
+        // update dom for new question
+        console.log(fireflyArr[questionNum]);
+        console.log(fireflyArr[questionNum].question)
+        console.log(fireflyArr[questionNum].answer)
+        questionBox.innerText = fireflyArr[questionNum].question;
+        //clean the input form
+        formInput.value = null;
+        console.log(value)
+    } else {
+
+    }
+});

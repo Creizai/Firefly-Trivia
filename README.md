@@ -6,7 +6,6 @@ I love Firefly and still had a fear of api's and comparing answers with a inputb
 
 ## Build status
 Build status of continus integration i.e. travis, appveyor etc. Ex. - 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/dp9KtQ2" data-context="false" ><a href="//imgur.com/a/dp9KtQ2"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
  
 ## Screenshots
 ![Screenshot](https://i.imgur.com/g1ITplv.png)
