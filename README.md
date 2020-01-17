@@ -1,6 +1,9 @@
 ## Firefly-Trivia
 Trivia game for General Assembly first project that allows us to use what we have learned in class.  Using HTML, CSS, Javascript, and Api and no frameworks. 
 
+## Link
+Live URL: https://creizai.github.io/Firefly-Trivia/
+
 ## Motivation
 I love Firefly and still had a fear of api's and comparing answers with a inputbox.  I also didn't want to use any template for style, I just want to freeform it.  
 
