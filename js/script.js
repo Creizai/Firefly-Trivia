@@ -103,7 +103,7 @@ function flipBack() {
   }, 1000);
 }
 
-/*
+/* This is the API code Will be Implemented after new api is completed
 fetch(url)
     .then(res => res.json())
     .then(res => {
@@ -214,3 +214,7 @@ form.addEventListener("submit", evt => {
     flipBack();
   }
 });
+
+if (questionNum < 10) {
+  alert("GAME OVER: You got " + scoreCount + " Right out of 10");
+}
