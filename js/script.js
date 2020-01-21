@@ -215,6 +215,6 @@ form.addEventListener("submit", evt => {
   }
 });
 
-if (questionNum < 10) {
+if ((questionNum = 9)) {
   alert("GAME OVER: You got " + scoreCount + " Right out of 10");
 }
