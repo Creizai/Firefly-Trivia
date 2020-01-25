@@ -11,7 +11,7 @@ I love Firefly and still had a fear of api's and comparing answers with a inputb
 Build status of continus integration i.e. travis, appveyor etc. Ex. - 
  
 ## Screenshots
-![Screenshot](https://i.imgur.com/g1ITplv.png)
+![Screenshot](images/Firefly_Trivia_Screenshot.png)
 
 ## API Reference
 Had been using this
