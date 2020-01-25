@@ -84,23 +84,26 @@ const theAnswer = document.querySelector("#theAnswer");
 
 // setTimeout(function() {}, 1000)
 
-const flip = document.querySelector(".flip-card-inner");
+let flip = document.querySelector(".flip-card-inner");
 
 const correct = "Correct!";
 const incorrect = "Incorrect!";
 
-const score = document.querySelector("#score");
+let score = document.querySelector("#score");
 
+// Keeps the count of how many questions the user answered correctly
 let scoreCount = 0;
 
+// Function to flip the card over
 function flipQuestion() {
   flip.style.transform = `rotateY(180deg)`;
 }
 
+// Function to flip the card back over to the front
 function flipBack() {
   setTimeout(function() {
     flip.style.transform = `rotateY(0deg)`;
-  }, 1000);
+  }, 1500);
 }
 
 /* This is the API code Will be Implemented after new api is completed
@@ -164,7 +167,7 @@ let questionNum = 0;
 console.log(fireflyArr[questionNum]);
 console.log(fireflyArr[questionNum].question);
 console.log(fireflyArr[questionNum].answer);
-questionBox.innerText = fireflyArr[questionNum].question;
+questionBox.innerText = fireflyArr[questionNum].question + "?";
 
 form.addEventListener("submit", evt => {
   evt.preventDefault();
@@ -185,11 +188,12 @@ form.addEventListener("submit", evt => {
     console.log(fireflyArr[questionNum]);
     console.log(fireflyArr[questionNum].question);
     console.log(fireflyArr[questionNum].answer);
-    questionBox.innerText = fireflyArr[questionNum].question;
+    questionBox.innerText = fireflyArr[questionNum].question + "?";
     formInput.value = null;
     console.log(value);
     scoreCount++;
-    score.innerText = `Score: ${scoreCount}`;
+    // This is if you want the score count to be changed
+    // score.innerText = `Score: ${scoreCount}`;
     flipBack();
   } else if (
     value != fireflyArr[questionNum].answer &&
@@ -211,10 +215,8 @@ form.addEventListener("submit", evt => {
 
     flipBack();
   } else {
+    questionBox.innerText = `Game Over!\nYou got ${scoreCount} out of 10 Correct\nHit Refresh on the browser window to play again!`;
+    formInput.value = null;
     flipBack();
   }
 });
-
-if (questionNum == 9) {
-  alert("GAME OVER: You got " + scoreCount + " Right out of 10");
-}
